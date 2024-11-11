@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "341283037102",
+    "project_id": "flutterbuena",
+    "storage_bucket": "flutterbuena.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341283037102:android:a20892e5638bbd878c723f",
+        "android_client_info": {
+          "package_name": "com.example.examen_u_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACOtmZo_LWULhixx0r07ZQEWkGmvmhBkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341283037102:android:4925bef359fa3cdf8c723f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACOtmZo_LWULhixx0r07ZQEWkGmvmhBkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
