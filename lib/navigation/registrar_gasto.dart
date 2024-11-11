@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class RegistrarGasto extends StatefulWidget {
@@ -21,13 +22,31 @@ class _RegistrarGastoState extends State<RegistrarGasto> {
     super.dispose();
   }
 
-  void _saveExpense() {
-    if (_formKey.currentState!.validate()) {
-      // Aquí se podría añadir la lógica para guardar el gasto en Firebase
-      print("Gasto registrado: Cantidad - ${_cantidadController.text}, Descripción - ${_descripcionController.text}, Nombre - ${_nombreGastoController.text}");
+Future<void> _saveExpense() async {
+  if (_formKey.currentState!.validate()) {
+
+    final CollectionReference ref = FirebaseFirestore.instance.collection("control_cuentas");
+
+    final Map<String, dynamic> gastoData = {
+      "cantidad": int.parse(_cantidadController.text),
+      "descripcion": _descripcionController.text,
+      "nombre_gasto": _nombreGastoController.text,
+    };
+
+    try {
+
+      await ref.add(gastoData);
+      print("Gasto registrado en Firestore");
       Navigator.pop(context);
+    } catch (e) {
+      print("Error al registrar el gasto: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error al guardar el gasto")),
+      );
     }
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
